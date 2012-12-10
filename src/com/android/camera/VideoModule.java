@@ -1530,6 +1530,9 @@ public class VideoModule implements CameraModule,
             mParameters.setPreviewFrameRate(mProfile.videoFrameRate);
         }
 
+        // Set video size before recording starts
+        CameraSettings.setEarlyVideoSize(mParameters, mProfile);
+
         forceFlashOffIfSupported(!mUI.isVisible());
 
         // Set white balance parameter.
