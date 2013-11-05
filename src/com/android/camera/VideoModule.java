@@ -872,10 +872,8 @@ public class VideoModule implements CameraModule,
         if (mMediaRecorderRecording) {
             onStopVideoRecording();
             return true;
-        } else if (mUI.hidePieRenderer()) {
-            return true;
         } else {
-            return mUI.removeTopLevelPopup();
+            return mUI.onBackPressed();
         }
     }
 
@@ -1864,7 +1862,7 @@ public class VideoModule implements CameraModule,
 
     @Override
     public void onShowSwitcherPopup() {
-        mUI.onShowSwitcherPopup();
+        // do nothing.
     }
 
     @Override
